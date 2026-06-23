@@ -1,4 +1,5 @@
 'use client'
+import '@/lib/chartSetup'
 import { motion } from 'framer-motion'
 import { Line, Bar } from 'react-chartjs-2'
 

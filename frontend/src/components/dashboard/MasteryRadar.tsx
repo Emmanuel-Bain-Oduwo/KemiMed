@@ -1,4 +1,5 @@
 'use client'
+import '@/lib/chartSetup'
 import { Radar } from 'react-chartjs-2'
 
 const data = {

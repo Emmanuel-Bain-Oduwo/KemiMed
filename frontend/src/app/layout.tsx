@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Mono, Fraunces } from 'next/font/google'
-import '@/lib/chartSetup'
 import './globals.css'
 
 const inter = Inter({

@@ -1,4 +1,5 @@
 'use client'
+import '@/lib/chartSetup'
 import { motion } from 'framer-motion'
 import { Line } from 'react-chartjs-2'
 import StatCard from '@/components/shared/StatCard'
