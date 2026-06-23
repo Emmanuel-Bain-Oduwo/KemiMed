@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* KemiMed design tokens */
+  --color-bg:       #EEF2F7;
+  --color-surf:     #FFFFFF;
+  --color-surf2:    #F7F9FC;
+  --color-border:   #DDE3ED;
+  --color-pri:      #0B5C8F;
+  --color-pri-dark: #084472;
+  --color-acc:      #0CA89E;
+  --color-vio:      #7C3AED;
+  --color-gold:     #C78B0A;
+  --color-rose:     #DC2626;
+  --color-grn:      #16A34A;
+  --color-txt:      #0D1B2E;
+  --color-muted:    #5A6882;
+  --color-dim:      #97A3B6;
+  --color-sb:       #071525;
+
+  /* Fonts */
+  --font-sans:  var(--font-inter), sans-serif;
+  --font-mono:  var(--font-ibm-mono), monospace;
+  --font-serif: var(--font-fraunces), serif;
+
+  /* Shadows */
+  --shadow-card: 0 2px 12px rgba(11,92,143,0.08);
+  --shadow-lg:   0 8px 32px rgba(11,92,143,0.12);
+
+  /* shadcn compat */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #EEF2F7;
+  --foreground: #0D1B2E;
+  --card: #FFFFFF;
+  --card-foreground: #0D1B2E;
+  --popover: #FFFFFF;
+  --popover-foreground: #0D1B2E;
+  --primary: #0B5C8F;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F7F9FC;
+  --secondary-foreground: #0D1B2E;
+  --muted: #F7F9FC;
+  --muted-foreground: #5A6882;
+  --accent: #0CA89E;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #DDE3ED;
+  --input: #DDE3ED;
+  --ring: #0B5C8F;
+  --chart-1: #0B5C8F;
+  --chart-2: #0CA89E;
+  --chart-3: #7C3AED;
+  --chart-4: #C78B0A;
+  --chart-5: #DC2626;
+  --radius: 0.75rem;
+  --sidebar: #071525;
+  --sidebar-foreground: rgba(255,255,255,0.8);
+  --sidebar-primary: #0CA89E;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(255,255,255,0.07);
+  --sidebar-accent-foreground: rgba(255,255,255,0.85);
+  --sidebar-border: rgba(255,255,255,0.05);
+  --sidebar-ring: #0CA89E;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background: #EEF2F7;
+    color: #0D1B2E;
+    font-family: var(--font-inter), sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: #DDE3ED; border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
