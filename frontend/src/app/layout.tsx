@@ -25,7 +25,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: 'KemiMed™ — Health Platform by Kemirix',
-  description: 'KemiMed by Kemirix Health Technologies — the intelligent health sciences learning platform for university students.',
+  description: 'KemiMed by Kemirix — the intelligent health sciences learning platform for university students. Contact: Kemi.med@kemirix.com',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

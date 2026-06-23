@@ -204,18 +204,26 @@ export default function Sidebar() {
       <div style={{
         padding: '14px 18px',
         borderTop: '1px solid rgba(255,255,255,0.06)',
-        display: 'flex', alignItems: 'center', gap: 10,
+        display: 'flex', flexDirection: 'column', gap: 10,
         marginTop: 'auto',
       }}>
-        <div style={{
-          width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
-          background: 'linear-gradient(135deg,#0B5C8F,#0CA89E)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: 'white', fontSize: 13, fontWeight: 700,
-        }}>E</div>
-        <div>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>Emmanuel Bain</div>
-          <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)' }}>B.Pharm · Year 3</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{
+            width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
+            background: 'linear-gradient(135deg,#0B5C8F,#0CA89E)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            color: 'white', fontSize: 13, fontWeight: 700,
+          }}>E</div>
+          <div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>Emmanuel Bain</div>
+            <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)' }}>B.Pharm · Year 3</div>
+          </div>
+        </div>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: 8 }}>
+          <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.15)', letterSpacing: '0.5px', marginBottom: 3, fontFamily: 'var(--font-ibm-mono),monospace', textTransform: 'uppercase' }}>Kemirix · KemiMed™</div>
+          <a href="mailto:Kemi.med@kemirix.com" style={{ fontSize: 10, color: 'rgba(12,168,158,0.6)', textDecoration: 'none', fontFamily: 'var(--font-ibm-mono),monospace' }}>
+            Kemi.med@kemirix.com
+          </a>
         </div>
       </div>
     </aside>
