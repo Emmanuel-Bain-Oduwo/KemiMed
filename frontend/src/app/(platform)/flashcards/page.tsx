@@ -17,7 +17,7 @@ export default function FlashcardsPage() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:900, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:900, margin:'0 auto' }}>
 
       {/* Tab bar */}
       <div style={{ display:'flex', gap:4, background:'#FFFFFF', borderRadius:10, padding:4, border:'1px solid #DDE3ED', marginBottom:20, width:'fit-content' }}>
@@ -69,7 +69,7 @@ Result: ↓ warfarin clearance → ↑ plasma levels → ↑ INR (can rise from 
 
       {/* My Decks */}
       {activeTab === 1 && (
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:16 }}>
+        <div className="km-grid-3">
           {decks.map(d => (
             <div key={d.title} style={{ background:'#FFFFFF', borderRadius:12, padding:18, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
               <div style={{ fontSize:28, marginBottom:10 }}>{d.icon}</div>
@@ -118,7 +118,7 @@ Result: ↓ warfarin clearance → ↑ plasma levels → ↑ INR (can rise from 
 
       {/* Analytics */}
       {activeTab === 3 && (
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+        <div className="km-grid-2">
           <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED' }}>
             <div style={{ fontSize:13, fontWeight:700, marginBottom:12 }}>Weekly Cards Reviewed</div>
             <div style={{ display:'flex', gap:6, alignItems:'flex-end', height:80 }}>

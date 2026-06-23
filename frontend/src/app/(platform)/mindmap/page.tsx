@@ -24,7 +24,7 @@ const branches = [
 
 export default function MindmapPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
       <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', marginBottom:20 }}>
         <div style={{ display:'flex', gap:8, alignItems:'center' }}>
           <input placeholder="Enter topic for mind map..." style={{ flex:1, border:'1px solid #DDE3ED', borderRadius:8, padding:'8px 12px', fontSize:13, outline:'none' }} />
@@ -50,7 +50,7 @@ export default function MindmapPage() {
         </div>
 
         {/* 2×2 grid of branches */}
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+        <div className="km-grid-2">
           {branches.map(b => (
             <div key={b.label} style={{
               border:`2px solid ${b.color}20`,

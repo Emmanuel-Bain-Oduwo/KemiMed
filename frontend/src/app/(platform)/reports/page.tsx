@@ -19,8 +19,8 @@ const recent = [
 
 export default function ReportsPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:900, margin:'0 auto' }}>
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12, marginBottom:24 }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:900, margin:'0 auto' }}>
+      <div className="km-grid-3" style={{ marginBottom:24 }}>
         {types.map(t => (
           <motion.div key={t.label} whileHover={{ y:-2 }} transition={{ duration:0.15 }}>
             <div style={{

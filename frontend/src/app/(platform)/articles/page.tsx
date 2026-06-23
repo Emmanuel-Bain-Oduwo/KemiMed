@@ -15,7 +15,7 @@ export default function ArticlesPage() {
   const tabs = ['Read', 'Write / Blog', 'KemiMed Generate']
 
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
       <div style={{ display:'flex', gap:4, background:'#FFFFFF', borderRadius:10, padding:4, border:'1px solid #DDE3ED', marginBottom:20, width:'fit-content' }}>
         {tabs.map((t,i) => (
           <button key={t} onClick={() => setTab(i)} style={{
@@ -26,7 +26,7 @@ export default function ArticlesPage() {
       </div>
 
       {tab === 0 && (
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:16 }}>
+        <div className="km-grid-3">
           {readArticles.map(a => (
             <div key={a.title} style={{ background:'#FFFFFF', borderRadius:12, border:'1px solid #DDE3ED', overflow:'hidden', boxShadow:'0 2px 12px rgba(11,92,143,0.08)', cursor:'pointer' }}>
               <div style={{ background:a.gradient, padding:'20px 16px 24px' }}>
@@ -70,7 +70,7 @@ export default function ArticlesPage() {
         <div style={{ maxWidth:520, margin:'0 auto', background:'#FFFFFF', borderRadius:12, padding:24, border:'1px solid #DDE3ED' }}>
           <div style={{ fontSize:15, fontWeight:700, marginBottom:16 }}>KemiMed Article Generator</div>
           <input placeholder="Topic..." style={{ width:'100%', border:'1px solid #DDE3ED', borderRadius:8, padding:'8px 12px', fontSize:13, marginBottom:10, boxSizing:'border-box', outline:'none' }} />
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:16 }}>
+          <div className="km-grid-2" style={{ marginBottom:16 }}>
             <select style={{ padding:'8px 10px', border:'1px solid #DDE3ED', borderRadius:8, fontSize:13 }}>
               {['Blog post','Literature review','Case report','Editorial'].map(o=><option key={o}>{o}</option>)}
             </select>

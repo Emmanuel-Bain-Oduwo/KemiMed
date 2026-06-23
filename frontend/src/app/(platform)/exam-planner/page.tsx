@@ -20,7 +20,7 @@ const readiness = [
 
 export default function ExamPlannerPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
 
       {/* Active exam */}
       <div style={{
@@ -44,7 +44,7 @@ export default function ExamPlannerPage() {
         <button style={{ background:'#0B5C8F', color:'white', border:'none', padding:'8px 18px', borderRadius:8, fontWeight:600, cursor:'pointer', fontSize:13 }}>View plan</button>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+      <div className="km-grid-2">
         {/* Study plan */}
         <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
           <div style={{ fontSize:14, fontWeight:700, marginBottom:14 }}>KemiMed Study Plan</div>

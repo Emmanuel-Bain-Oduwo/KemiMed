@@ -35,10 +35,10 @@ const quickItems = [
 
 export default function DashboardPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding: '28px 32px', maxWidth: 1200, margin: '0 auto' }}>
+    <motion.div {...pageAnim} className="km-page-lg" style={{ maxWidth: 1200, margin: '0 auto' }}>
 
       {/* Stats row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16, marginBottom: 20 }}>
+      <div className="km-grid-4" style={{ marginBottom: 20 }}>
         <StatCard value="847"  label="Cards mastered"   trend="↑ 42 this week"      trendUp />
         <StatCard value="23"   label="Day streak 🔥"     trend="Personal best!"       trendUp />
         <StatCard value="74%"  label="Overall mastery"  trend="↑ 8% this month"     trendUp />
@@ -46,13 +46,13 @@ export default function DashboardPage() {
       </div>
 
       {/* Heatmap + Radar */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
+      <div className="km-grid-2" style={{ marginBottom: 20 }}>
         <StudyHeatmap />
         <MasteryRadar />
       </div>
 
       {/* Due Today + Quick Launch */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+      <div className="km-grid-2">
         {/* Due Today */}
         <div style={card}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#0D1B2E', marginBottom: 14 }}>
@@ -86,7 +86,7 @@ export default function DashboardPage() {
           <div style={{ fontSize: 13, fontWeight: 700, color: '#0D1B2E', marginBottom: 14 }}>
             ⚡ Quick Launch
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8 }}>
+          <div className="km-grid-3" style={{ gap: 8 }}>
             {quickItems.map((item) => (
               <motion.div key={item.href + item.label} whileHover={{ y: -2 }} transition={{ duration: 0.15 }}>
                 <Link href={item.href} style={{

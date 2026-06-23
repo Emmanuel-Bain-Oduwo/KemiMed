@@ -10,7 +10,7 @@ const videos = [
 
 export default function VideoPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
       <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', marginBottom:24 }}>
         <div style={{ fontSize:14, fontWeight:700, marginBottom:14 }}>Generate Video Lesson</div>
         <div style={{ display:'flex', gap:8, marginBottom:10 }}>
@@ -25,7 +25,7 @@ export default function VideoPage() {
         </div>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:16 }}>
+      <div className="km-grid-3">
         {videos.map(v => (
           <div key={v.title} style={{ background:'#FFFFFF', borderRadius:12, border:'1px solid #DDE3ED', overflow:'hidden', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
             <div style={{

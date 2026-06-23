@@ -122,3 +122,54 @@
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-thumb { background: #DDE3ED; border-radius: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
+
+/* ── KemiMed responsive utilities ── */
+.km-page     { padding: 20px 28px; }
+.km-page-lg  { padding: 28px 32px; }
+.km-grid-2   { display: grid; grid-template-columns: 1fr 1fr;        gap: 16px; }
+.km-grid-3   { display: grid; grid-template-columns: repeat(3,1fr);  gap: 14px; }
+.km-grid-4   { display: grid; grid-template-columns: repeat(4,1fr);  gap: 16px; }
+.km-grid-5   { display: grid; grid-template-columns: repeat(5,1fr);  gap: 12px; }
+.km-sidebar  { transition: transform 0.25s ease; }
+.km-mob-overlay { display: none; }
+.km-hamburger   { display: none; align-items: center; justify-content: center;
+                  background: transparent; border: none; cursor: pointer;
+                  color: #0D1B2E; font-size: 22px; padding: 4px 8px; border-radius: 6px; }
+.km-hamburger:hover { background: #EEF2F7; }
+
+@media (max-width: 900px) {
+  .km-page, .km-page-lg { padding: 16px 18px; }
+  .km-grid-4 { grid-template-columns: repeat(2,1fr); gap: 10px; }
+  .km-grid-5 { grid-template-columns: repeat(3,1fr); gap: 8px; }
+}
+
+@media (max-width: 768px) {
+  .km-sidebar {
+    position: fixed !important;
+    left: 0; top: 0; bottom: 0; height: 100vh !important;
+    z-index: 50;
+    transform: translateX(-100%);
+  }
+  .km-sidebar.open { transform: translateX(0); }
+  .km-mob-overlay {
+    display: block; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5); z-index: 40; cursor: pointer;
+  }
+  .km-hamburger { display: flex !important; }
+}
+
+@media (max-width: 640px) {
+  .km-page, .km-page-lg  { padding: 12px 14px; }
+  .km-grid-2 { grid-template-columns: 1fr;           gap: 12px; }
+  .km-grid-3 { grid-template-columns: 1fr 1fr;       gap: 10px; }
+  .km-grid-4 { grid-template-columns: 1fr 1fr;       gap: 8px;  }
+  .km-grid-5 { grid-template-columns: repeat(2,1fr); gap: 8px;  }
+}
+
+@media (max-width: 420px) {
+  .km-grid-3 { grid-template-columns: 1fr; }
+  .km-grid-4 { grid-template-columns: 1fr; }
+}
+
+.km-reminders { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+@media (max-width: 640px) { .km-reminders { grid-template-columns: 1fr; gap: 12px; } }

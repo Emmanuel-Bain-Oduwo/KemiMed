@@ -12,8 +12,8 @@ const toggles = [
 
 export default function SettingsPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:900, margin:'0 auto' }}>
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:900, margin:'0 auto' }}>
+      <div className="km-grid-2">
 
         {/* Profile */}
         <div style={{ background:'#FFFFFF', borderRadius:12, padding:24, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>

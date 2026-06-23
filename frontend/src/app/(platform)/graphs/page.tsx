@@ -37,7 +37,7 @@ const barOpts = {
 
 export default function GraphsPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1100, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1100, margin:'0 auto' }}>
 
       <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', marginBottom:20 }}>
         <div style={{ display:'flex', gap:8, flexWrap:'wrap', alignItems:'center' }}>
@@ -49,7 +49,7 @@ export default function GraphsPage() {
         </div>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+      <div className="km-grid-2">
         <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
           <div style={{ fontSize:13, fontWeight:700, marginBottom:14 }}>Plasma Concentration vs Time</div>
           <Line data={lineData} options={lineOpts} />
@@ -73,7 +73,7 @@ export default function GraphsPage() {
       </div>
 
       {/* AI Image Analysis */}
-      <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', marginTop:20, display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+      <div className="km-grid-2" style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', marginTop:20 }}>
         <div>
           <div style={{ fontSize:13, fontWeight:700, marginBottom:12 }}>AI Image Analysis</div>
           <div style={{

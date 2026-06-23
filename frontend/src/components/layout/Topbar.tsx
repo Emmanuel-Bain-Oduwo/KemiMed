@@ -28,7 +28,7 @@ const titles: Record<string, { title: string; sub: string }> = {
   '/settings':     { title: '⚙️ Settings',                  sub: 'Profile · KemiMed preferences · Notifications' },
 }
 
-export default function Topbar() {
+export default function Topbar({ onMenuToggle }: { onMenuToggle?: () => void }) {
   const pathname = usePathname()
   const info = titles[pathname] ?? { title: 'KemiMed™', sub: 'Kemirix Health Platform' }
 
@@ -43,14 +43,17 @@ export default function Topbar() {
       padding: '0 24px',
       position: 'sticky',
       top: 0,
-      zIndex: 50,
+      zIndex: 30,
       flexShrink: 0,
     }}>
-      <div style={{ flex: 1 }}>
-        <div style={{ fontSize: 16, fontWeight: 700, color: '#0D1B2E', lineHeight: 1.2 }}>
+      <button className="km-hamburger" onClick={onMenuToggle} aria-label="Toggle menu" style={{ marginRight: 8, flexShrink: 0 }}>
+        ☰
+      </button>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 16, fontWeight: 700, color: '#0D1B2E', lineHeight: 1.2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {info.title}
         </div>
-        <div style={{ fontSize: 11, color: '#5A6882', marginTop: 1 }}>
+        <div style={{ fontSize: 11, color: '#5A6882', marginTop: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {info.sub}
         </div>
       </div>

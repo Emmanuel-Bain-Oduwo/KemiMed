@@ -97,23 +97,32 @@ function NavBadgeEl({ badge }: { badge: NavBadge }) {
   )
 }
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen = false, onClose }: { isOpen?: boolean; onClose?: () => void }) {
   const pathname = usePathname()
 
   return (
-    <aside style={{
-      width: 248,
-      minWidth: 248,
-      height: '100vh',
-      background: '#071525',
-      borderRight: '1px solid rgba(255,255,255,0.05)',
-      display: 'flex',
-      flexDirection: 'column',
-      overflowY: 'auto',
-      flexShrink: 0,
-    }}>
+    <aside
+      className={`km-sidebar${isOpen ? ' open' : ''}`}
+      style={{
+        width: 248,
+        minWidth: 248,
+        height: '100vh',
+        background: '#071525',
+        borderRight: '1px solid rgba(255,255,255,0.05)',
+        display: 'flex',
+        flexDirection: 'column',
+        overflowY: 'auto',
+        flexShrink: 0,
+      }}
+    >
       {/* Logo */}
-      <div style={{ padding: '20px 18px 14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ padding: '20px 18px 14px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative' }}>
+        <button
+          className="km-hamburger"
+          onClick={onClose}
+          aria-label="Close menu"
+          style={{ position: 'absolute', right: 10, top: 14, color: 'rgba(255,255,255,0.4)', fontSize: 18 }}
+        >✕</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
           <div style={{
             width: 34, height: 34,

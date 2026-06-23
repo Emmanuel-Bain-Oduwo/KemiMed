@@ -39,16 +39,16 @@ const badgeMap: Record<string,string> = { Critical:'rose', Improving:'gold', Str
 
 export default function ProgressPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1100, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1100, margin:'0 auto' }}>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginBottom:20 }}>
+      <div className="km-grid-4" style={{ marginBottom:20 }}>
         <StatCard value="847"  label="Cards mastered"  trend="↑ 42 this week"  trendUp />
         <StatCard value="74%"  label="Overall mastery" trend="↑ 8% this month" trendUp />
         <StatCard value="23 🔥" label="Day streak"      trend="Personal best!"  trendUp />
         <StatCard value="18h"  label="Study time"      trend="↓ 2h below goal" trendUp={false} />
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20, marginBottom:20 }}>
+      <div className="km-grid-2" style={{ marginBottom:20 }}>
         <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
           <div style={{ fontSize:14, fontWeight:700, marginBottom:14 }}>Weekly Study Hours</div>
           <Line data={lineData} options={lineOpts} />
@@ -74,7 +74,7 @@ export default function ProgressPage() {
 
       <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
         <div style={{ fontSize:14, fontWeight:700, marginBottom:14 }}>Smart Reminders</div>
-        <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr', gap:20 }}>
+        <div className="km-reminders">
           <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
             {reminders.map(r => (
               <div key={r.text} style={{ background:r.bg, border:`1px solid ${r.border}30`, borderRadius:10, padding:'12px 16px', display:'flex', alignItems:'center', gap:12 }}>

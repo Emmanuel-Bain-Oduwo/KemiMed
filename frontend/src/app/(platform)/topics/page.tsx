@@ -25,7 +25,7 @@ export default function TopicsPage() {
     : allTopics
 
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
       <div style={{ display:'flex', gap:4, background:'#FFFFFF', borderRadius:10, padding:4, border:'1px solid #DDE3ED', marginBottom:20, width:'fit-content' }}>
         {tabs.map((t,i) => (
           <button key={t} onClick={() => setTab(i)} style={{
@@ -35,7 +35,7 @@ export default function TopicsPage() {
         ))}
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14 }}>
+      <div className="km-grid-3">
         {filtered.map(t => (
           <motion.div key={t.name} whileHover={{ y:-2 }} transition={{ duration:0.15 }}>
             <div style={{ background:'#FFFFFF', borderRadius:12, padding:18, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)', cursor:'pointer' }}>

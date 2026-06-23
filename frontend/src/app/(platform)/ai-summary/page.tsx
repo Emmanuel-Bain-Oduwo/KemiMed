@@ -17,7 +17,7 @@ export default function AiSummaryPage() {
   const [selected, setSelected] = useState(0)
 
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:900, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:900, margin:'0 auto' }}>
       <div style={{ background:'#FFFFFF', borderRadius:12, padding:28, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)', marginBottom:20 }}>
         <div style={{ fontSize:16, fontWeight:700, color:'#0D1B2E', marginBottom:6 }}>
           Upload anything → get a structured summary
@@ -42,7 +42,7 @@ export default function AiSummaryPage() {
       </div>
 
       <div style={{ fontSize:14, fontWeight:700, color:'#0D1B2E', marginBottom:14 }}>Choose output format</div>
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:10 }}>
+      <div className="km-grid-3" style={{ gap:10 }}>
         {formats.map((f,i) => (
           <motion.div key={f.label} whileHover={{ y:-2 }} transition={{ duration:0.15 }}>
             <div onClick={()=>setSelected(i)} style={{

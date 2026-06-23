@@ -19,7 +19,7 @@ const boards = [
 
 export default function BoardExamsPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
 
       <HeroCard style={{ marginBottom:24 }}>
         <div style={{ fontSize:24, fontFamily:'var(--font-fraunces),serif', fontWeight:800, marginBottom:8 }}>
@@ -31,7 +31,7 @@ export default function BoardExamsPage() {
       </HeroCard>
 
       <div style={{ fontSize:14, fontWeight:700, color:'#0D1B2E', marginBottom:14 }}>Select your board exam</div>
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(5,1fr)', gap:12, marginBottom:24 }}>
+      <div className="km-grid-5" style={{ marginBottom:24 }}>
         {boards.map(b => (
           <motion.div key={b.name} whileHover={{ y:-2, boxShadow:'0 6px 24px rgba(11,92,143,0.14)' }} transition={{ duration:0.15 }}>
             <div style={{
@@ -56,7 +56,7 @@ export default function BoardExamsPage() {
           <span style={{ fontSize:20 }}>🇺🇸</span>
           <span style={{ fontSize:15, fontWeight:700, color:'#0D1B2E' }}>USMLE Step 1 — Active Prep</span>
         </div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginBottom:20 }}>
+        <div className="km-grid-4" style={{ marginBottom:20 }}>
           {[
             { val:'68%',   label:'Readiness',       color:'#0CA89E' },
             { val:'1,240', label:'Questions done',   color:'#0B5C8F' },

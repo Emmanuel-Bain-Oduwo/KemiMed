@@ -10,7 +10,7 @@ const episodes = [
 
 export default function PodcastPage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:1000, margin:'0 auto' }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:1000, margin:'0 auto' }}>
 
       <div style={{
         background:'linear-gradient(135deg,#4C1D95,#7C3AED)',
@@ -32,7 +32,7 @@ export default function PodcastPage() {
         </div>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+      <div className="km-grid-2">
         <div style={{ background:'#FFFFFF', borderRadius:12, padding:20, border:'1px solid #DDE3ED', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
           <div style={{ fontSize:14, fontWeight:700, marginBottom:14 }}>Episodes</div>
           <div style={{ display:'flex', flexDirection:'column', gap:12 }}>

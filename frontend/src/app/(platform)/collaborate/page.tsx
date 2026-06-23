@@ -5,8 +5,8 @@ const pageAnim = { initial: { opacity: 0, y: 6 }, animate: { opacity: 1, y: 0 },
 
 export default function CollaboratePage() {
   return (
-    <motion.div {...pageAnim} style={{ padding:'20px 28px', maxWidth:900, margin:'0 auto' }}>
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20 }}>
+    <motion.div {...pageAnim} className="km-page" style={{ maxWidth:900, margin:'0 auto' }}>
+      <div className="km-grid-2">
 
         {/* Active room */}
         <div style={{ background:'#FFFFFF', borderRadius:12, padding:24, border:'2px solid #0CA89E', boxShadow:'0 2px 12px rgba(11,92,143,0.08)' }}>
