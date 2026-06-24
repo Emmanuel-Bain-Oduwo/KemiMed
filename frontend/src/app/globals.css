@@ -137,12 +137,36 @@
                   color: #0D1B2E; font-size: 22px; padding: 4px 8px; border-radius: 6px; }
 .km-hamburger:hover { background: #EEF2F7; }
 
+/* ── Bottom navigation (mobile only) ── */
+.km-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: #FFFFFF;
+  border-top: 1px solid #DDE3ED;
+  box-shadow: 0 -4px 20px rgba(11,92,143,0.09);
+  z-index: 80;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 6px;
+  /* Safe area for iPhone home indicator */
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+@keyframes km-sheet-up {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Tablet ── */
 @media (max-width: 900px) {
   .km-page, .km-page-lg { padding: 16px 18px; }
   .km-grid-4 { grid-template-columns: repeat(2,1fr); gap: 10px; }
   .km-grid-5 { grid-template-columns: repeat(3,1fr); gap: 8px; }
 }
 
+/* ── Mobile: sidebar becomes drawer, bottom nav appears ── */
 @media (max-width: 768px) {
   .km-sidebar {
     position: fixed !important;
@@ -155,9 +179,24 @@
     display: block; position: fixed; inset: 0;
     background: rgba(0,0,0,0.5); z-index: 40; cursor: pointer;
   }
-  .km-hamburger { display: flex !important; }
+
+  /* Bottom nav visible on mobile */
+  .km-bottom-nav { display: flex; }
+
+  /* Add space below main content so it's not hidden behind bottom nav */
+  .km-main { padding-bottom: 68px; }
+
+  /* Hide hamburger — bottom nav handles navigation on mobile */
+  .km-hamburger { display: none !important; }
+
+  /* Compact topbar subtitle on mobile */
+  .km-topbar-sub { display: none; }
+
+  /* Show search icon in topbar on mobile */
+  .km-mob-search { display: flex !important; }
 }
 
+/* ── Small mobile ── */
 @media (max-width: 640px) {
   .km-page, .km-page-lg  { padding: 12px 14px; }
   .km-grid-2 { grid-template-columns: 1fr;           gap: 12px; }
@@ -167,8 +206,8 @@
 }
 
 @media (max-width: 420px) {
-  .km-grid-3 { grid-template-columns: 1fr; }
-  .km-grid-4 { grid-template-columns: 1fr; }
+  .km-grid-3 { grid-template-columns: 1fr 1fr; }
+  .km-grid-4 { grid-template-columns: 1fr 1fr; }
 }
 
 .km-reminders { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }

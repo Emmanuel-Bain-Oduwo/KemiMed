@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Sidebar from '@/components/layout/Sidebar'
 import Topbar from '@/components/layout/Topbar'
+import BottomNav from '@/components/layout/BottomNav'
 
 export default function PlatformLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -14,10 +15,11 @@ export default function PlatformLayout({ children }: { children: React.ReactNode
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden', minWidth: 0 }}>
         <Topbar onMenuToggle={() => setSidebarOpen(v => !v)} />
-        <main style={{ flex: 1, overflowY: 'auto', background: '#EEF2F7' }}>
+        <main className="km-main" style={{ flex: 1, overflowY: 'auto', background: '#EEF2F7' }}>
           {children}
         </main>
       </div>
+      <BottomNav />
     </div>
   )
 }
